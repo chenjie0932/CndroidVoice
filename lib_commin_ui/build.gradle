@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
 }
 
 android {
@@ -30,26 +30,7 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    //eventbus类库依赖
-    implementation rootProject.depsLibs.eventbus
-    //greendao类库依赖
-    implementation rootProject.depsLibs.greendao
-    //rxjava库
-    implementation rootProject.depsLibs.rxjava
-    implementation rootProject.depsLibs.rxandroid
-    //arouter库
-    implementation(rootProject.depsLibs.arouterapi) {
-        exclude group: 'com.android.support'
-    }
-    annotationProcessor rootProject.depsLibs.aroutercompiler
-    //gson解析库
-    implementation rootProject.depsLibs.gson
-    //基础UI库
-    implementation project(':lib_commin_ui')
-    //音频播放器组
-    implementation project(':lib_audio')
 }

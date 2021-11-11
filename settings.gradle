@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CndroidVoice"
 include ':cndroid_voice'
+include ':lib_commin_ui'
+include ':lib_audio'
