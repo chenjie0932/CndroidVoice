@@ -6,7 +6,6 @@ android {
     compileSdk this.rootProject.android.compileSdk
 
     defaultConfig {
-        applicationId this.rootProject.android.applicationId
         minSdk this.rootProject.android.minSdk
         targetSdk this.rootProject.android.targetSdk
         versionCode this.rootProject.android.versionCode

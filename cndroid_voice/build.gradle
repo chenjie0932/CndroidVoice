@@ -41,11 +41,7 @@ dependencies {
     //rxjava库
     implementation rootProject.depsLibs.rxjava
     implementation rootProject.depsLibs.rxandroid
-    //arouter库
-    implementation(rootProject.depsLibs.arouterapi) {
-        exclude group: 'com.android.support'
-    }
-    annotationProcessor rootProject.depsLibs.aroutercompiler
+
     //gson解析库
     implementation rootProject.depsLibs.gson
     //基础UI库
