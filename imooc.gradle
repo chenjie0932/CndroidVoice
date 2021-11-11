@@ -1,0 +1,17 @@
+ext {
+    android = [
+            applicationId :"com.example.cndroid_voice",
+            compileSdk : 28,
+            minSdk     : 19,
+            targetSdk  : 28,
+            versionCode: 1,
+            versionName: "1.0",
+            multiDexEnabled    : true
+    ]
+    depsVersion = [
+
+    ]
+    depsLibs = [
+
+    ]
+}
