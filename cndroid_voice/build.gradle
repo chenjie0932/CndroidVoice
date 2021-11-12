@@ -1,19 +1,29 @@
 plugins {
     id 'com.android.application'
+    id 'com.alibaba.arouter'
 }
 
 android {
-    compileSdk this.rootProject.android.compileSdk
+    compileSdkVersion rootProject.android.compileSdkVersion
+    buildToolsVersion rootProject.android.buildToolsVersion
 
     defaultConfig {
-        applicationId this.rootProject.android.applicationId
-        minSdk this.rootProject.android.minSdk
-        targetSdk this.rootProject.android.targetSdk
-        versionCode this.rootProject.android.versionCode
-        versionName this.rootProject.android.versionName
-        multiDexEnabled this.rootProject.android.multiDexEnabled
+        applicationId  this.rootProject.android.applicationId
+        minSdkVersion  this.rootProject.android.minSdkVersion
+        targetSdkVersion  this.rootProject.android.targetSdkVersion
+        versionCode  this.rootProject.android.versionCode
+        versionName  this.rootProject.android.versionName
+        multiDexEnabled  this.rootProject.android.multiDexEnabled
+        //ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
     }
-
+    lintOptions {
+        abortOnError false
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -28,24 +38,33 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    //eventbus类库依赖
-    implementation rootProject.depsLibs.eventbus
-    //greendao类库依赖
-    implementation rootProject.depsLibs.greendao
-    //rxjava库
-    implementation rootProject.depsLibs.rxjava
-    implementation rootProject.depsLibs.rxandroid
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation  this.rootProject.depsLibs.appcompact
+    implementation  this.rootProject.depsLibs.design
+    implementation  this.rootProject.depsLibs.recyclerview
+    implementation  this.rootProject.depsLibs.constraint
 
+    //eventbus类库依赖
+    implementation this.rootProject.depsLibs.eventbus
+    //greendao类库依赖
+    implementation this.rootProject.depsLibs.greendao
+    //rxjava库
+    implementation this.rootProject.depsLibs.rxjava
+    implementation this.rootProject.depsLibs.rxandroid
+    //arouter库
+    implementation(this.rootProject.depsLibs.arouterapi) {
+        exclude group: 'com.android.support'
+    }
     //gson解析库
-    implementation rootProject.depsLibs.gson
+    implementation this.rootProject.depsLibs.gson
     //基础UI库
     implementation project(':lib_commin_ui')
     //音频播放器组
     implementation project(':lib_audio')
+    //图片加载库
+    implementation project(':lib_image_loader')
+    //网络请求库
+    implementation project(':lib_network')
+    //业务基础库
+    implementation project(':lib_base')
 }

@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../layout/custom_preview.xml" value="0.23333333333333334" />
         <entry key="cndroid_voice/src/main/res/drawable/bg_banner.xml" value="0.287962962962963" />
         <entry key="cndroid_voice/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="lib_commin_ui/src/main/res/layout/dialog_common_layout.xml" value="0.19427083333333334" />
       </map>
     </option>
   </component>

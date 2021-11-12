@@ -1,12 +1,7 @@
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
-    }
-}
-rootProject.name = "CndroidVoice"
 include ':cndroid_voice'
 include ':lib_commin_ui'
 include ':lib_audio'
+include ':lib_image_loader'
+include ':lib_network'
+include ':lib_base'
+include ':lib_share'
